@@ -85,6 +85,29 @@ $(document).ready(function () {
     var revWidth = $('.item-rev-slider .rev').width();
     var visibleImages = 4;
     var slider = $('.item-rev-slider');
+    var autoScrollInterval = 10000; // 10 seconds
+
+    // Function to handle automatic sliding
+    function autoSlide() {
+        var scrollLeft = slider.scrollLeft();
+        var maxScrollLeft = revWidth * (revCount - visibleImages);
+        if (scrollLeft < maxScrollLeft) {
+            slider.animate({ scrollLeft: '+=' + revWidth }, 'slow');
+        } else {
+            // If at the end, scroll back to the beginning
+            slider.animate({ scrollLeft: 0 }, 'slow');
+        }
+    }
+
+    // Start automatic sliding
+    var autoSlideInterval = setInterval(autoSlide, autoScrollInterval);
+
+    // Pause automatic sliding when mouse hovers over the slider
+    slider.hover(function () {
+        clearInterval(autoSlideInterval);
+    }, function () {
+        autoSlideInterval = setInterval(autoSlide, autoScrollInterval);
+    });
 
     slider.on('scroll', function () {
         var scrollLeft = $(this).scrollLeft();
@@ -104,4 +127,28 @@ $(document).ready(function () {
             nextBtn.removeClass('text-secondary');
         }
     });
+});
+
+$(document).ready(function() {
+    // Get all review elements
+    var $reviews = $('.rev');
+
+    // Variable to store the maximum height
+    var maxHeight = 0;
+
+    // Loop through each review
+    $reviews.each(function() {
+        // Get the height of the review content
+        var height = $(this).find('.rev-content').outerHeight();
+
+        // Update maxHeight if necessary
+        if (height > maxHeight) {
+            maxHeight = height;
+        }
+    });
+
+    // Set the height of all review elements to the maximum height
+    $reviews.find('.rev-content').css('height', maxHeight + 'px');
+    $reviews.css('height', (maxHeight+10) + 'px');
+    
 });
