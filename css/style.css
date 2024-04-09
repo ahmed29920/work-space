@@ -5,7 +5,13 @@
     --light-text: #9CA3AF;
     --white: #fff;
 }
-
+@font-face {
+    font-family: inter;
+    src: url('./Inter.ttc');
+}
+*{
+    font-family: inter;
+}
 a {
     text-decoration: none;
 }
@@ -314,4 +320,70 @@ footer b{
 }
 .fa-star{
     color:var(--primary)
+}
+
+.space-img{
+    height: 3vw;   
+    width: 6vh;   
+}
+@media screen and (max-width: 999px){
+    .space-img{
+        height: 6vw;   
+        width: 5vh;   
+    }
+}
+@media screen and (max-width: 500px){
+    .space-img{
+        height: 8vw;   
+        width: 5vh;   
+    }
+}
+@media screen and (max-width: 380px){
+    .space-img{
+        height: 10vw;   
+        width: 5vh;   
+    }
+}
+.space-label{
+    justify-content: end;
+}
+@media screen and (max-width:999px) {
+    .space-label{
+        justify-content: space-around;
+    }  
+}
+.space-card{
+    border-radius: 18px;
+    padding-bottom: 5px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.space-card img{
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 20vh;
+}
+.preview-btn{
+    border: 1px solid #FAE5A4;
+    transition: 0.5s;
+}
+.preview-btn:hover{
+    background: #FAE5A4;
+}
+.space-card-type-text{
+    font-size: 14px; font-weight: 400;
+}
+.sapce-type-filter-item{
+    border: 1px solid #FAE5A4;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.active-sapce-type-filter-item{
+    background-color: #FAE5A4;
+}
+.space-type-filter-icon{
+    cursor: pointer;
+    background-color: #F5CB4A;
+}
+.space-type-filter-col{
+    height:45px
 }

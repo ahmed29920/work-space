@@ -152,3 +152,21 @@ $(document).ready(function() {
     $reviews.css('height', (maxHeight+10) + 'px');
     
 });
+
+$(document).on('click', '.sapce-type-filter-item' , function(){
+    $('.sapce-type-filter-item').removeClass('active-sapce-type-filter-item')
+    $(this).addClass('active-sapce-type-filter-item')
+    let type = $(this).attr('data-type')
+    let items = $('.available-space-item')
+    items.each(function() {
+        if ($(this).attr('data-type') === type) {
+            $(this).removeClass('d-none');
+        } else {
+            $(this).addClass('d-none');
+        }
+    });
+})
+$(document).on('click', '.space-type-filter-icon' , function(){
+    $('.sapce-type-filter-item').removeClass('active-sapce-type-filter-item')
+    $('.available-space-item').removeClass('d-none');
+})
