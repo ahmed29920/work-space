@@ -321,7 +321,41 @@ footer b{
 .fa-star{
     color:var(--primary)
 }
+.get-pass-progress-cont{
+    height: 0.6rem !important;
+    background: #BCC2CD;
+}
+.get-pass-progress-done{
+    background-color: var(--primary);
+}
 
+@media screen and (max-width: 999px){
+    .plan-selection-modal-dialog{
+        max-width: 90vw !important;
+    }
+}
+
+@media screen and (max-width: 745px){
+    .plan-selection-modal-dialog{
+        max-width: 100vw !important;
+    }
+}
+.plan-selection-modal-dialog .modal-content{
+    background-color: #F9FAFB;
+}
+.plan-card{
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.plan-card img {
+    width: 80%;
+}
+@media screen and (max-width: 745px){
+    .plan-card img {
+        width: 75%;
+    }
+}
 .space-img{
     height: 3vw;   
     width: 6vh;   
@@ -382,7 +416,7 @@ footer b{
 }
 .space-type-filter-icon{
     cursor: pointer;
-    background-color: #F5CB4A;
+    background-color: var(--primary);
 }
 .space-type-filter-col{
     height:45px

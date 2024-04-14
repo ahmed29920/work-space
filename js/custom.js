@@ -170,3 +170,6 @@ $(document).on('click', '.space-type-filter-icon' , function(){
     $('.sapce-type-filter-item').removeClass('active-sapce-type-filter-item')
     $('.available-space-item').removeClass('d-none');
 })
+$(document).on('click','.plan-card',function(){
+    $('.get-pass-progress-done').css('width' , '60%')
+})
